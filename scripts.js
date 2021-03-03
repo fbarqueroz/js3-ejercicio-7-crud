@@ -179,7 +179,7 @@ Clona tu propio API: https://mockapi.io/clone/5d2cd8678c90070014972943
 
 function agregarPersona() {
 
-  fetch(`${apiUrl}/${add}`, {
+  fetch(apiUrl, {
     method: "POST"
   })
   .then((response) => {
@@ -192,11 +192,16 @@ function agregarPersona() {
   });
 }
 
-if(form.input === "") {
-  alert("Por favor llene los espacios y verifique de nuevo");
-} else {
-  alert("El formulario se ha emviado exitosamente");
-}
+form.addEventListener("submit",(e) => {
+
+  e.preventDefault();
+
+  if(form.input === "") {
+    alert("Por favor llene los espacios y verifique de nuevo");
+  } else {
+    alert("El formulario se ha enviado exitosamente");
+  }
+});
 
 if(form.type === "reset") {
-  form.style.display = "none";
+  form.style.display = "none"};
